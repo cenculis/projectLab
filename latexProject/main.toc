@@ -1,0 +1,34 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{i}{}%
+\contentsline {chapter}{Code listing}{ii}{}%
+\contentsline {chapter}{Introduction}{1}{}%
+\contentsline {chapter}{\numberline {1}Hardware}{3}{}%
+\contentsline {section}{\numberline {1.1}Inverted pendulum}{3}{}%
+\contentsline {section}{\numberline {1.2}Controller}{3}{}%
+\contentsline {chapter}{\numberline {2}Software}{4}{}%
+\contentsline {chapter}{\numberline {3}Controllers}{5}{}%
+\contentsline {section}{\numberline {3.1}Linear quadratic regulator (LQR)}{5}{}%
+\contentsline {subsection}{\numberline {3.1.1}Theory}{5}{}%
+\contentsline {subsection}{\numberline {3.1.2}Simulation}{6}{}%
+\contentsline {subsection}{\numberline {3.1.3}Implementation}{7}{}%
+\contentsline {section}{\numberline {3.2}Model predictive control (MPC)}{8}{}%
+\contentsline {subsection}{\numberline {3.2.1}Theory}{8}{}%
+\contentsline {subsection}{\numberline {3.2.2}Simulation}{9}{}%
+\contentsline {subsection}{\numberline {3.2.3}Implementation}{9}{}%
+\contentsline {section}{\numberline {3.3}Sliding mode control (SMC)}{10}{}%
+\contentsline {subsection}{\numberline {3.3.1}Theory}{10}{}%
+\contentsline {subsection}{\numberline {3.3.2}Simulation}{10}{}%
+\contentsline {subsection}{\numberline {3.3.3}Implementation}{10}{}%
+\contentsline {section}{\numberline {3.4}Fuzzy controller}{11}{}%
+\contentsline {subsection}{\numberline {3.4.1}Theory}{11}{}%
+\contentsline {subsection}{\numberline {3.4.2}Simulation}{11}{}%
+\contentsline {subsection}{\numberline {3.4.3}Implementation}{11}{}%
+\contentsline {section}{\numberline {3.5}Impedance control}{12}{}%
+\contentsline {subsection}{\numberline {3.5.1}Theory}{12}{}%
+\contentsline {subsection}{\numberline {3.5.2}Simulation}{12}{}%
+\contentsline {subsection}{\numberline {3.5.3}Implementation}{12}{}%
+\contentsline {chapter}{Bibliography}{13}{}%
+\contentsline {section}{Source code of linear quadratic regulator (simulation)}{vii}{}%
+\contentsline {section}{Source code of linear quadratic regulator (Real implementation)}{ix}{}%
+\contentsline {section}{Source code of model predictive controller (simulation)}{xii}{}%
+\contentsline {section}{Source code of model predictive controller (Real implementation)}{xiv}{}%

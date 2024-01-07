@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{HAMZA2019347}
+Mukhtar~Fatihu Hamza, Hwa~Jen Yap, Imtiaz~Ahmed Choudhury, Abdulbasid~Ismail
+  Isa, Aminu~Yahaya Zimit, and Tufan Kumbasar.
+\newblock Current development on using rotary inverted pendulum as a benchmark
+  for testing linear and nonlinear control algorithms.
+\newblock {\em Mechanical Systems and Signal Processing}, 116:347--369, 2019.
+
+\bibitem{LQRvsMPC}
+Andrzej Jezierski, Jakub Mozaryn, and Damian Suski.
+\newblock A comparison of lqr and mpc control algorithms of an inverted
+  pendulum.
+\newblock In Wojciech Mitkowski, Janusz Kacprzyk, Krzysztof
+  Oprz{\k{e}}dkiewicz, and Pawe{\l} Skruch, editors, {\em Trends in Advanced
+  Intelligent Control, Optimization and Automation}, pages 65--76, Cham, 2017.
+  Springer International Publishing.
+
+\bibitem{bookInverted}
+Olfa Boubaker and Rafael Iriarte Vivar~Balderrama.
+\newblock {\em The Inverted Pendulum in Control Theory and Robotics : From
+  Theory to New Innovations}.
+\newblock 10 2017.
+
+\bibitem{controlInverted}
+Liping~Fan Zhijun~Li, Chenguang~Yang.
+\newblock {\em Advanced Control of Wheeled Inverted Pendulum Systems}.
+\newblock 7 2012.
+
+\bibitem{Quanser_2023}
+qube servo 3, Dec 2023.
+
+\bibitem{Quanser_2023a}
+linear flexible inverted pendulum, Dec 2023.
+
+\bibitem{lqrLecture}
+Prof. Dr. Ing.~Daniel Goerges.
+\newblock Optimal control 5. linear-quadratic optimal control.
+\newblock University Lecture, 2023.
+
+\bibitem{1102565}
+N.~Lehtomaki, N.~Sandell, and M.~Athans.
+\newblock Robustness results in linear-quadratic gaussian based multivariable
+  control designs.
+\newblock {\em IEEE Transactions on Automatic Control}, 26(1):75--93, 1981.
+
+\bibitem{wikiLQR}
+In \textit{Wikipedia}, Januar 2024.
+
+\bibitem{zaklPredRiad}
+Martin~Gulan Gergely~Takacs.
+\newblock {\em Zaklady prediktivneho riadenia}.
+\newblock 2018.
+
+\bibitem{mpcLecture}
+Alberto Bemporad.
+\newblock Model predictive control.
+\newblock University Lecture, 2023.
+
+\bibitem{matlabMPC}
+What is model predictive control?
+
+\end{thebibliography}

@@ -1,0 +1,99 @@
+\normalsize\bf{Source code of linear quadratic regulator (Real implementation)}
+\label{lqrReal.m}
+\vspace{1cm}
+\begin{lstlisting}[numbers=left,basicstyle=\scriptsize,caption={Source code of linear quadratic regulator (Real implementation).},captionpos=b]	
+% Pause for 3 seconds before starting the code execution
+pause(3);
+
+% Clear workspace, close all figures, and clear command window
+clear all;
+close all;
+clc;
+
+% Add necessary paths for libraries
+addpath(genpath('CLSS Praxis'), genpath('hudaqlib'))
+
+% Hudaq device initialization
+dev = HudaqDevice('MF634');
+
+% Total experiment samples
+s = 2000;
+% Sampling period
+Ts = 0.02;
+
+% States during the experiment
+x = zeros(s,4);
+% Sample states
+z2 = zeros(4,1);
+% Initial values
+x(1,:) = [(AIRead(dev,1)/0.15/100) 0.01*round(-13.1*AIRead(dev,3)) (-AIRead(dev,2)/0.96*pi/180) 0];
+
+% Force array to store calculated force values
+Force = zeros(s,1);
+
+% Pendulum parameters
+m_p     = 0.329; m_w     = 3.2; l_sp    = 0.44; f_w     = 6.2; 
+f_p     = 0.009; gra       = 9.81; j_a     = 0.072; Ts = 0.02; 
+
+% Continuous-time state-space matrices
+A_c = [ 0   1                               0                   0
+0   -f_w/(m_w+m_p)                  0                   0
+0   0                               0                   1
+0   (f_w*m_p*l_sp)/(j_a*(m_w+m_p)) (m_p*l_sp*gra)/j_a     -f_p/j_a];   
+B_c = [0  ;   1/(m_w+m_p) ;   0   ;   -m_p*l_sp/((m_w+m_p)*j_a)];
+C_c = [   1   0   0   0
+0   1   0   0
+0   0   1   0
+0   0   0   1];
+D_c = [0;0;0;0];
+
+% Convert to discrete-time
+sys_cont = ss(A_c,B_c,C_c,D_c);
+sys_d = c2d(sys_cont,Ts);
+
+A = sys_d.A; B = sys_d.B; C = sys_d.C; D = sys_d.D;
+
+% LQR controller parameters
+Q = diag([100, .1, 100, .1]);    % State penalization 
+R = 1e-2;                        % Input penalization
+Np = 60;                         % Prediction horizon 
+[K, P] = dlqr(A, B, Q, R);
+
+% Loop through each sample
+for i = 1:s-1
+
+% LQR CONTROL ALGORITHM
+Force(i) = ctranspose(-K*x(i,:));
+
+% Save the data
+z2(1) = AIRead(dev,1)/0.15/100;     % Position of cart (meter)
+z2(2) = 0.01*round(-13.1*AIRead(dev,3));    % Speed of cart (m/s)
+z2(3) = -AIRead(dev,2)/0.96*pi/180;  % Angle of pendulum (radian)
+
+% Voltage limitation
+if abs(Force(i)) > 10
+Force(i) = sign(Force(i))*10; 
+end
+
+% Apply calculated voltage    
+tic
+while toc < Ts
+DOWriteBit(dev, 1, 2, 1);   % Activation pendulum
+DOWriteBit(dev, 1, 2, 0);   % Channel 1 consists of DO0..DO7
+DOWriteBit(dev, 1, 2, 1);   % DO2 Requires continuous pulse
+AOWrite(dev, 2, Force(i));  % Apply calculated voltage
+end
+
+% Angular speed calculation (derivative) 
+z2_winkel = -AIRead(dev,2)/0.96*pi/180;
+z2(4) = (z2_winkel - z2(3))/Ts;   % Angular speed of pendulum
+
+% Update states
+x(i+1,:) = ctranspose(z2);
+
+% Check if the pendulum is out of range
+if abs(z2(1)) > 0.3 || abs(z2(3)*180/pi) > 10    
+disp('Please bring me back !');
+pause(3);   % Wait for 3 seconds
+end
+\end{lstlisting}

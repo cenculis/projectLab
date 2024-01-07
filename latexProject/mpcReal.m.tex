@@ -1,0 +1,92 @@
+\normalsize\bf{Source code of model predictive controller (Real implementation)}
+\label{mpcReal.m}
+\vspace{1cm}
+\begin{lstlisting}[numbers=left,basicstyle=\scriptsize,caption={Source code of model predictive controller (Real implementation).},captionpos=b]	
+	% Pause for 3 seconds to allow initialization
+	pause(3);
+	
+	% Clear workspace, close all figures, and clear command window
+	clear all;
+	close all;
+	clc;
+	
+	% Add necessary paths for CLSS Praxis and hudaqlib
+	addpath(genpath('CLSS Praxis'), genpath('hudaqlib'))
+	
+	% Create a HudaqDevice object for MF634
+	dev = HudaqDevice('MF634');
+	
+	% Number of samples and sampling period
+	s = 2000;    % Total experiment samples
+	Ts = 0.02;   % Sampling period
+	
+	% Initialize arrays for storing system states and control input
+	x = zeros(s, 4);     % States during the experiment
+	z2 = zeros(4, 1);    % Sample states
+	x(1, :) = [(AIRead(dev, 1)/0.15/100) 0.01*round(-13.1*AIRead(dev, 3)) (-AIRead(dev, 2)/0.96*pi/180) 0]; % Initial values
+	Force = zeros(s, 1);  % Control input (force applied)
+	
+	%% State-space
+	m_p = 0.329; m_w = 3.2; l_sp = 0.44; f_w = 6.2; 
+	f_p = 0.009; gra = 9.81; j_a = 0.072; Ts = 0.02; 
+	
+	% Define continuous-time state-space matrices
+	A_c = [ 0   1                               0                   0
+	0   -f_w/(m_w+m_p)                  0                   0
+	0   0                               0                   1
+	0   (f_w*m_p*l_sp)/(j_a*(m_w+m_p)) (m_p*l_sp*gra)/j_a     -f_p/j_a];   
+	B_c = [0  ;   1/(m_w+m_p) ;   0   ;   -m_p*l_sp/((m_w+m_p)*j_a)];
+	C_c = [   1   0   0   0
+	0   1   0   0
+	0   0   1   0
+	0   0   0   1];
+	D_c = [0; 0; 0; 0];
+	
+	% Convert to discrete-time
+	sys_cont = ss(A_c, B_c, C_c, D_c);
+	sys_d = c2d(sys_cont, Ts);
+	
+	A = sys_d.A; B = sys_d.B; C = sys_d.C; D = sys_d.D;
+	
+	% Hessian, F matrices of cost function
+	[H, F] = Controller_MPC_CostFunction(A, B, Np, Q, R, P);
+	a = zeros(1, Np);
+	a(1, 1) = 1;
+	
+	for i = 1:s-1
+
+	% MPC CONTROL ALGORITHM
+	Force(i) = ctranspose(-a*(H^(-1))*F*x(i, :));
+	
+	% Save the data
+	z2(1) = AIRead(dev, 1)/0.15/100;         % Position of the cart (meter)
+	z2(2) = 0.01*round(-13.1*AIRead(dev, 3)); % Speed of the cart (m/s)
+	z2(3) = -AIRead(dev, 2)/0.96*pi/180;      % Angle of the pendulum (radian)
+	
+	% Voltage limitation
+	if abs(Force(i)) > 10
+	Force(i) = sign(Force(i))*10; 
+	end
+	
+	% Apply calculated voltage    
+	tic
+	while toc < Ts
+	DOWriteBit(dev, 1, 2, 1);  % Freischaltung Pendel
+	DOWriteBit(dev, 1, 2, 0);  % Channel 1 consists of DO0..DO7
+	DOWriteBit(dev, 1, 2, 1);  % DO2 Requires continuous pulse
+	AOWrite(dev, 2, Force(i)); % Apply calculated voltage
+	end
+	
+	% Angular speed calculation (derivative) 
+	z2_winkel = -AIRead(dev, 2)/0.96*pi/180;
+	z2(4) = (z2_winkel - z2(3))/Ts; % Angular speed of the pendulum
+	
+	% Update system states
+	x(i+1, :) = ctranspose(z2);
+	
+	% Check if the pendulum is out of range
+	if abs(z2(1)) > 0.3 || abs(z2(3)*180/pi) > 10    % Der Pendel ist ausser Bereich
+	disp('Please bring me back !');
+	pause(3);  % Wait 3 seconds
+	end
+\end{lstlisting}

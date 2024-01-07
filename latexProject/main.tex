@@ -1,0 +1,125 @@
+\documentclass[12pt,fleqn,a4paper,oneside]{mybook} %Final!!!
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\pdfgentounicode=1
+\usepackage{mathtools}  					
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+\usepackage{etoolbox}                       %Problematic URL in reference
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}%Removes badness warnings
+%This is to remove warnings resulting by otherwise OK URL's
+\usepackage[hyphens]{url}
+\usepackage{notes}
+\usepackage{indentfirst}
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries\sffamily}
+\usepackage{upgreek}
+\usepackage{multicol}
+\usepackage{eurosym}
+%This custom command defines how the literal menus look like.
+\newcommand{\gui}[1]{{\emph{#1}}} %Gui commands, icon names, buttons
+% All code, functions, variables are typed like this
+\newcommand{\code}[1]{{\lstinline[columns=fixed]{#1}}}
+
+\newcommand{\angl}[1]{{\footnote{\emph{angl.}\ {#1}}}} %Shorthand english equivalent
+
+\usepackage[inner=3.5cm,outer=2cm,top=25mm,bottom=25mm,paperwidth=210mm,paperheight=297mm,includehead]{geometry}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+
+
+\DeclarePairedDelimiter{\diagpars}{(}{)}
+\newcommand{\diag}{\operatorname{diag}\diagpars}
+
+\let\oldhat\hat
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+
+\usepackage{amsthm}
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbo
+\theoremstyle{definition}
+\newtheorem{exmp}{Pr\'{i}klad}[chapter]
+\AtEndEnvironment{exmp}{\null\hfill\qedsymbol}
+
+\usepackage{listings,color} 			    %To list Matlab code
+
+\usepackage{xcolor}
+
+\definecolor{Myblack}{RGB}{48, 55, 54}
+\definecolor{Mybrown}{RGB}{15, 153, 117}
+\definecolor{Mygreen}{RGB}{160, 82, 131}
+\definecolor{Myyellow}{RGB}{208, 170, 91}
+\definecolor{Myblue}{RGB}{4, 118, 249}
+
+\lstset{language=C++,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{Myblue}\ttfamily,
+	stringstyle=\color{Myyellow}\ttfamily,
+	commentstyle=\color{Mygreen}\ttfamily,
+	numbers=none,
+	breaklines=true,
+	showspaces=false,
+	showstringspaces=false
+	backgroundcolor=\color{white}, % set backgroundcolor
+	basicstyle=\footnotesize,% basic font setting
+	morecomment=[l][\color{Mybrown}]{\#}
+}
+\renewcommand\lstlistingname{Code}
+\renewcommand\lstlistlistingname{Code listing}
+
+\pagestyle{empty}
+
+\begin{document}
+	%%%%%%% beginning %%%%%%%%
+	\includepdf[pages=-]{Titulka.pdf}
+	\frontmatter
+	\tableofcontents
+	\thispagestyle{empty}
+	\cleardoublepage
+	\setcounter{page}{1}
+	% \phantomsection
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures
+	\cleardoublepage
+	% \phantomsection
+	\addcontentsline{toc}{chapter}{\lstlistlistingname}
+	\lstlistoflistings
+	\newpage
+	%%%%%% Jednotlive kapitoly %%%%%%%%%
+	\pagestyle{plain}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	\mainmatter
+	\include{Introduction}
+	\include{MainPart}
+	%\include{AeroShield}
+	%\include{Software}
+	%\include{Didakticke}
+	%\include{matlabAsim}
+	
+	%%%%%%% end %%%%%%%%
+	
+	\bibliographystyle{unsrt}
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\bibliography{bibliog}
+	\backmatter
+	\pagenumbering{roman}\setcounter{page}{4}
+	\cleardoublepage
+	\include{lqr.m}
+	\addcontentsline{toc}{section}{Source code of linear quadratic regulator (simulation)}
+	\include{lqrReal.m}
+	\addcontentsline{toc}{section}{Source code of linear quadratic regulator (Real implementation)}
+	\include{mpc.m}
+	\addcontentsline{toc}{section}{Source code of model predictive controller (simulation)}
+	\include{mpcReal.m}
+	\addcontentsline{toc}{section}{Source code of model predictive controller (Real implementation)}
+	\include{mpcCostFcn.m}
+	\addcontentsline{toc}{section}{Source code of cost function callculation for MPC}
+	
+\end{document}

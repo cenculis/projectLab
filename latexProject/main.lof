@@ -1,0 +1,14 @@
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Configurations of inverted pendulum.}}{1}{}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rotational inverted pendulum from the company quanser \cite {Quanser_2023}.}}}{1}{}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Linear inverted pendulum from the company quanser \cite {Quanser_2023a}.}}}{1}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Inverted pendulum setup on which implementation of designed controllers was done.}}{2}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Position of the pendulum $($LQR simulation$)$.}}{6}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Angle of the pendulum $($LQR simulation$)$.}}{7}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Torque of the pendulum $($LQR simulation$)$.}}{7}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Position of the pendulum $($MPC simulation$)$.}}{9}{}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Angle of the pendulum $($MPC simulation$)$.}}{9}{}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Torque of the pendulum $($MPC simulation$)$.}}{10}{}%
