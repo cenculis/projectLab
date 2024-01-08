@@ -84,11 +84,11 @@ Examining the plots, it becomes apparent that the angle of the pendulum Fig. \re
 \newpage
 \section{Model predictive control (MPC)}
 \subsection{Theory}
-Model Predictive Control (MPC) represents an optimal control methodology where the computed control actions are designed to minimize a cost function for a constrained dynamical system over a finite, receding horizon. Its primary advantage over LQR control lies in its superior performance when the process encounters limitations \cite{zaklPredRiad}. However, it is acknowledged that MPC entails a steeper learning curve and a more intricate implementation process. Often likened to playing chess, MPC hinges on a profound understanding of the plant model and subsequent predictions of its behavior, recallculating the best possible output at each step \cite{zaklPredRiad}\cite{mpcLecture}.
+Model Predictive Control (MPC) represents an optimal control methodology where the computed control actions are designed to minimize a cost function for a constrained dynamical system over a finite, receding horizon. Its primary advantage over LQR control lies in its superior performance when the process encounters limitations \cite{zaklPredRiad}. However, it is acknowledged that MPC require a steeper learning curve and a more intricate implementation process. Often compared to playing chess, MPC depends on a deep understanding of the plant model and subsequent predictions of its behavior, recalculating the best possible output at each step \cite{zaklPredRiad}\cite{mpcLecture}.
 
 In the MPC framework, the controller, at each time step, receives or estimates the current state of the plant. Based on this information, it computes a sequence of control actions that minimizes the cost over the specified horizon $($horizon can be sometimes infinite$)$ \cite{matlabMPC}\cite{zaklPredRiad}. This involves solving a constrained optimization problem, heavily relying on an internal plant model and dependent on the current system state. The controller then applies the first computed control action to the plant, disregarding the subsequent ones \cite{matlabMPC}. This iterative process repeats in each subsequent time step.
 
-In practical applications, despite the finite horizon, MPC inherits several beneficial traits from traditional optimal control methodologies. It naturally accommodates multi-input multi-output (MIMO) plants, adeptly handles time delays, and possesses inherent robustness against modeling errors \cite{mpcLecture}. Furthermore, nominal stability can be assured by incorporating specific constraints. Overall, while MPC demands a more intricate knowledge of the system and involves a complex implementation, it gives big advantages in handling constraints and offering superior performance \cite{zaklPredRiad}.
+In practical applications, despite the finite horizon, MPC inherits several beneficial characteristics from traditional optimal control methodologies. It naturally accommodates multi-input multi-output (MIMO) plants, time delays, and possesses inherent robustness against model errors \cite{mpcLecture}. Furthermore, nominal stability can be assured by incorporating specific constraints. Overall, while MPC demands a more intricate knowledge of the system and involves a complex implementation, it gives big advantages in handling constraints and offering superior performance \cite{zaklPredRiad}.
 
 In a mathematical way we can express MPC problem as: finding the best control sequence over a future horizon of N steps.
 
@@ -118,7 +118,7 @@ HOW WAS THE SIMULATION DONE\\
 
 Following the MATLAB simulation, the obtained results reveal distinctive patterns Fig. \ref{mpcPos}, \ref{mpcAng}, \ref{mpcTor}. Notably, each spike observed across all plots corresponds to the introduced disturbance. These disturbances were deliberately added to assess the robustness of the controller under varying conditions.
 
-Figure \ref{lqrpos} shows the changing position of the pendulum carriage. Figure \ref{lqrang} shows the angle of the pendulum in radians and Fig. \ref{lqrTorq} shows the force i.e. torque applied, to move the pendulum. The full code can be found in appendix on the page \pageref{mpcSim.m}.
+Figure \ref{mpcPos} shows the changing position of the pendulum carriage. Figure \ref{mpcAng} shows the angle of the pendulum in radians and Fig. \ref{lqrTorq} shows the force i.e. torque applied, to move the pendulum. The full code can be found in appendix on the page \pageref{mpcSim.m}.
 
 \begin{figure}[!tbh]
 	\centering
@@ -145,7 +145,37 @@ Examining the plots, it becomes apparent that the angle of the pendulum Fig. \re
 \newpage
 \section{Sliding mode control (SMC)}
 \subsection{Theory}
+
+Sliding mode control (SMC) is a nonlinear control methodology known for its impressive attributes such as precision, resilience, and straightforward tuning and application. It is applicable to both Single-Input Single-Output (SISO) and Multiple-Input Multiple-Output (MIMO) systems \cite{slidingLecture}\cite{Decarlo2008AQI}. The SMC consists of a two-part controller design. In the initial phase, an N-dimensional sliding surface must be designed where, by definition, the error asymptotically approaches zero. The subsequent phase is concerned with the selection of a control law, that will make the system states be attracted to the sliding surface.
+
+The state-feedback control law is not a continuous function of time, rather, it can transition from one continuous structure to another based on the current position in the state space. The movement of the system as it glides along the boundaries of the control structures is referred to as a sliding mode, and the geometric locus comprising these boundaries is called the sliding surface \cite{wikiSMC}. SMC exhibits robustness against model uncertainties and disturbances. However, a significant drawback is the occurrence of chattering effects around the surface, which arises as a result of the switching of the control law. This is a common phenomenon in sliding mode control and is highly undesirable in practical applications due to increased control activity and the potential excitation of unmodeled high-frequency dynamics. Nevertheless, these issues can be mitigated or even avoided through the application of appropriate strategies \cite{slidingLecture}.
+
 \subsection{Simulation}
+
+Following the MATLAB simulation, the obtained results reveal distinctive patterns Fig. \ref{posSmc}, \ref{angSmc}, \ref{torSmc}. Notably, each spike observed across all plots corresponds to the introduced disturbance. These disturbances were deliberately added to assess the robustness of the controller under varying conditions.
+
+Figure \ref{posSmc} shows the changing position of the pendulum carriage. Figure \ref{angSmc} shows the angle of the pendulum in radians and Fig. \ref{torSmc} shows the force i.e. torque applied, to move the pendulum. The full code can be found in appendix on the page \pageref{smcSim}.
+
+\begin{figure}[!tbh]
+	\centering
+	\includegraphics[width=150mm]{obr/posSmc.png}
+	\caption{Position of the pendulum $($SMC simulation$)$.}\label{posSmc}
+\end{figure}
+
+\begin{figure}[!tbh]
+	\centering
+	\includegraphics[width=150mm]{obr/angSmc.png}
+	\caption{Angle of the pendulum $($SMC simulation$)$.}\label{angSmc}
+\end{figure}
+
+\begin{figure}[!tbh]
+	\centering
+	\includegraphics[width=150mm]{obr/torSmc.png}
+	\caption{Torque of the pendulum $($SMC simulation$)$.}\label{torSmc}
+\end{figure}
+
+Examining the plots, it becomes apparent that the angle of the pendulum Fig. \ref{angSmc} achieves stabilization in the unstable upright position within a maximum of 40 samples, depending on the level of disturbance introduced. The position of the pendulum Fig. \ref{posSmc} attain stability within a maximum of 40 samples. We can clearly see the rapid switching of the control law on the Fig. \ref{torSmc}. 
+
 \subsection{Implementation}
 
 \newpage

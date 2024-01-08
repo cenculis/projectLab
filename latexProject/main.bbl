@@ -60,4 +60,18 @@ Alberto Bemporad.
 \bibitem{matlabMPC}
 What is model predictive control?
 
+\bibitem{slidingLecture}
+Prof. Dr.-Ing.~Steven Liu.
+\newblock Chapter 5. sliding mode control and integrator backstepping.
+\newblock University Lecture, 2023.
+
+\bibitem{Decarlo2008AQI}
+Raymond~A. Decarlo and Stanisław~H. Żak.
+\newblock A quick introduction to sliding mode control and its applications 1.
+\newblock 2008.
+
+\bibitem{wikiSMC}
+Sliding mode control.
+\newblock In \textit{Wikipedia}, Januar 2024.
+
 \end{thebibliography}
