@@ -90,22 +90,18 @@ In the MPC framework, the controller, at each time step, receives or estimates t
 
 In practical applications, despite the finite horizon, MPC inherits several beneficial characteristics from traditional optimal control methodologies. It naturally accommodates multi-input multi-output (MIMO) plants, time delays, and possesses inherent robustness against model errors \cite{mpcLecture}. Furthermore, nominal stability can be assured by incorporating specific constraints. Overall, while MPC demands a more intricate knowledge of the system and involves a complex implementation, it gives big advantages in handling constraints and offering superior performance \cite{zaklPredRiad}.
 
-In a mathematical way we can express MPC problem as: finding the best control sequence over a future horizon of N steps.
-
+In a mathematical way we can express MPC problem as: finding the best control sequence over a future horizon of N steps Eq. \ref{mpc1}
 \begin{equation}\label{mpc1}
 \underset{u_o,...,u_{N-1}}{min}\sum_{k=0}^{N-1}\left \| y_k-r(t) \right \|_{2}^{2}+\rho \left \| u_k-u_r(t) \right \|_{2}^{2}
 \end{equation}
-
-\begin{align}\label{mpc2}
-s.t.	x_{k+1}&=f(x_k,u_k)\\ 
-	y_k &=g(x_k)
+\begin{align}
+s.t.	x_{k+1}&=f(x_k,u_k) \label{mpc2}\\ 
+	y_k &=g(x_k) \nonumber
 \end{align}
-
-\begin{align}\label{mpc3}
-	u_{min}\leq u_k\leq u_{max}\\
-	y_{min}\leq y_k\leq y_{max}
+\begin{align}
+	u_{min}\leq u_k\leq u_{max} \label{mpc3}\\
+	y_{min}\leq y_k\leq y_{max} \nonumber
 \end{align}
-
 \begin{equation}\label{mpc4}
 	x_o=x(t)
 \end{equation}
@@ -151,6 +147,20 @@ Sliding mode control (SMC) is a nonlinear control methodology known for its impr
 The state-feedback control law is not a continuous function of time, rather, it can transition from one continuous structure to another based on the current position in the state space. The movement of the system as it glides along the boundaries of the control structures is referred to as a sliding mode, and the geometric locus comprising these boundaries is called the sliding surface \cite{wikiSMC}. SMC exhibits robustness against model uncertainties and disturbances. However, a significant drawback is the occurrence of chattering effects around the surface, which arises as a result of the switching of the control law. This is a common phenomenon in sliding mode control and is highly undesirable in practical applications due to increased control activity and the potential excitation of unmodeled high-frequency dynamics. Nevertheless, these issues can be mitigated or even avoided through the application of appropriate strategies \cite{slidingLecture}.
 
 \subsection{Simulation}
+
+The initial stage in simulating the sliding mode controller in MATLAB involved the creation of the sliding surface Eq. \ref{smcL1}. Afterwards, the calculation of the output estimate $\tau$ Eq. \ref{smcL5} needs to be done. 
+
+\begin{align}
+s &= (\frac{d}{dt}+e)\tilde{\alpha }+(\frac{d}{dt}+\beta )\tilde{\rho}=\dot{\tilde{\alpha }}+e\tilde{\alpha }+\dot{\tilde{\rho }}+\beta \tilde{\rho }=-\dot{\alpha }-e\alpha -\dot{\rho }-\beta \rho =0 \label{smcL1}\\
+\dot{s} &=-\dot{\omega }-e\omega -\dot{v}-\beta v=0 \label{smcL2}\\
+\dot{s} &=-\frac{}{}\varphi -\frac{}{}\alpha +\frac{}{}\tau +(\frac{}{}-e)\omega +\frac{}{}v-\frac{}{}\tau -\beta v \label{smcL3}\\
+\dot{s} &= \label{smcL4}\\
+\hat{\tau } &=\frac{j_a(m_\omega +m_e)}{m_el_{sp}-j_a}\left ( \frac{}{}+\frac{}{}-(\frac{}{}-e) -(\frac{}{}-\beta )v\right ) \label{smcL5}\\
+\hat{\tau } &= \nonumber\\
+\hat{\tau } &=12,335239v+68,877358\alpha -3,492138(0,125-e)\omega -3,492138(1,7568-\beta )v \nonumber
+\end{align}
+
+where $q_2$ stands for the pendulum angle, $\dot{q_2}$ is the angular velocity of the pendulum, $q_1$ is position of the base of the pendulum and $\dot{q_1}$ is the linear velocity of the base of the pendulum.
 
 Following the MATLAB simulation, the obtained results reveal distinctive patterns Fig. \ref{posSmc}, \ref{angSmc}, \ref{torSmc}. Notably, each spike observed across all plots corresponds to the introduced disturbance. These disturbances were deliberately added to assess the robustness of the controller under varying conditions.
 

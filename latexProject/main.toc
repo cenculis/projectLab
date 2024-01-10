@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.1.3}Implementation}{7}{}%
 \contentsline {section}{\numberline {3.2}Model predictive control (MPC)}{8}{}%
 \contentsline {subsection}{\numberline {3.2.1}Theory}{8}{}%
-\contentsline {subsection}{\numberline {3.2.2}Simulation}{9}{}%
+\contentsline {subsection}{\numberline {3.2.2}Simulation}{8}{}%
 \contentsline {subsection}{\numberline {3.2.3}Implementation}{9}{}%
 \contentsline {section}{\numberline {3.3}Sliding mode control (SMC)}{10}{}%
 \contentsline {subsection}{\numberline {3.3.1}Theory}{10}{}%
@@ -27,11 +27,11 @@
 \contentsline {subsection}{\numberline {3.5.1}Theory}{13}{}%
 \contentsline {subsection}{\numberline {3.5.2}Simulation}{13}{}%
 \contentsline {subsection}{\numberline {3.5.3}Implementation}{13}{}%
-\contentsline {chapter}{Bibliography}{14}{}%
-\contentsline {section}{Source code of linear quadratic regulator (simulation)}{vii}{}%
-\contentsline {section}{Source code of linear quadratic regulator (Real implementation)}{ix}{}%
-\contentsline {section}{Source code of model predictive controller (simulation)}{xii}{}%
-\contentsline {section}{Source code of model predictive controller (Real implementation)}{xiv}{}%
+\contentsline {chapter}{Bibliography}{iii}{}%
+\contentsline {section}{Source code of linear quadratic regulator (simulation)}{v}{}%
+\contentsline {section}{Source code of linear quadratic regulator (Real implementation)}{viii}{}%
+\contentsline {section}{Source code of model predictive controller (simulation)}{x}{}%
+\contentsline {section}{Source code of model predictive controller (Real implementation)}{xiii}{}%
 \contentsline {section}{Source code of cost function callculation for MPC}{xv}{}%
-\contentsline {section}{Source code of sliding mode controller (simulation)}{xv}{}%
-\contentsline {section}{Source code of sliding mode controller (Real implementation)}{xv}{}%
+\contentsline {section}{Source code of sliding mode controller (simulation)}{xvi}{}%
+\contentsline {section}{Source code of sliding mode controller (Real implementation)}{xix}{}%

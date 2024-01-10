@@ -18,6 +18,10 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: mpcReal.m.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: mpcCostFcn.m.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+A level-1 auxiliary file: smc.m.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: smcReal.m.aux
 Database file #1: bibliog.bib
 Warning--empty publisher in bookInverted
 Warning--empty publisher in controlInverted
@@ -25,7 +29,7 @@ Warning--empty publisher in zaklPredRiad
 Warning--empty booktitle in Decarlo2008AQI
 You've used 15 entries,
             1791 wiz_defined-function locations,
-            536 strings with 5551 characters,
+            538 strings with 5573 characters,
 and the built_in function-call counts, 2440 in all, are:
 = -- 189
 > -- 97

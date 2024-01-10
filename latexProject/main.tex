@@ -106,23 +106,22 @@
 	%%%%%%% end %%%%%%%%
 	
 	\bibliographystyle{unsrt}
+	\pagenumbering{roman}\setcounter{page}{3}
 	\addcontentsline{toc}{chapter}{Bibliography}
 	\bibliography{bibliog}
 	\backmatter
-	\pagenumbering{roman}\setcounter{page}{4}
-	\cleardoublepage
-	\include{lqr.m}
 	\addcontentsline{toc}{section}{Source code of linear quadratic regulator (simulation)}
-	\include{lqrReal.m}
+	\include{lqr.m}
 	\addcontentsline{toc}{section}{Source code of linear quadratic regulator (Real implementation)}
-	\include{mpc.m}
+	\include{lqrReal.m}
 	\addcontentsline{toc}{section}{Source code of model predictive controller (simulation)}
-	\include{mpcReal.m}
+	\include{mpc.m}
 	\addcontentsline{toc}{section}{Source code of model predictive controller (Real implementation)}
-	\include{mpcCostFcn.m}
+	\include{mpcReal.m}
 	\addcontentsline{toc}{section}{Source code of cost function callculation for MPC}
+	\include{mpcCostFcn.m}
 	\addcontentsline{toc}{section}{Source code of sliding mode controller (simulation)}
-	\addcontentsline{toc}{section}{Source code of sliding mode controller (Real implementation)}
 	\include{smc.m}
+	\addcontentsline{toc}{section}{Source code of sliding mode controller (Real implementation)}
 	\include{smcReal.m}
 \end{document}
