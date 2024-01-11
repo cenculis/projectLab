@@ -18,15 +18,15 @@
 \contentsline {section}{\numberline {3.3}Sliding mode control (SMC)}{10}{}%
 \contentsline {subsection}{\numberline {3.3.1}Theory}{10}{}%
 \contentsline {subsection}{\numberline {3.3.2}Simulation}{11}{}%
-\contentsline {subsection}{\numberline {3.3.3}Implementation}{11}{}%
-\contentsline {section}{\numberline {3.4}Fuzzy controller}{12}{}%
-\contentsline {subsection}{\numberline {3.4.1}Theory}{12}{}%
-\contentsline {subsection}{\numberline {3.4.2}Simulation}{12}{}%
-\contentsline {subsection}{\numberline {3.4.3}Implementation}{12}{}%
-\contentsline {section}{\numberline {3.5}Impedance control}{13}{}%
-\contentsline {subsection}{\numberline {3.5.1}Theory}{13}{}%
-\contentsline {subsection}{\numberline {3.5.2}Simulation}{13}{}%
-\contentsline {subsection}{\numberline {3.5.3}Implementation}{13}{}%
+\contentsline {subsection}{\numberline {3.3.3}Implementation}{12}{}%
+\contentsline {section}{\numberline {3.4}Fuzzy controller}{13}{}%
+\contentsline {subsection}{\numberline {3.4.1}Theory}{13}{}%
+\contentsline {subsection}{\numberline {3.4.2}Simulation}{13}{}%
+\contentsline {subsection}{\numberline {3.4.3}Implementation}{13}{}%
+\contentsline {section}{\numberline {3.5}Impedance control}{14}{}%
+\contentsline {subsection}{\numberline {3.5.1}Theory}{14}{}%
+\contentsline {subsection}{\numberline {3.5.2}Simulation}{14}{}%
+\contentsline {subsection}{\numberline {3.5.3}Implementation}{14}{}%
 \contentsline {chapter}{Bibliography}{iii}{}%
 \contentsline {section}{Source code of linear quadratic regulator (simulation)}{v}{}%
 \contentsline {section}{Source code of linear quadratic regulator (Real implementation)}{viii}{}%

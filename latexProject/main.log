@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  10 JAN 2024 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  11 JAN 2024 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -787,27 +787,30 @@ Package pdftex.def Info: obr/mpcTor.png  used on input line 133.
 (pdftex.def)             Requested size: 426.79134pt x 225.6619pt.
  [9 <./obr/mpcPos.png (PNG copy)> <./obr/mpcAng.png (PNG copy)>] [10 <./obr/mpc
 Tor.png (PNG copy)>]
-Overfull \hbox (2.9924pt too wide) detected at line 161
-[]
- []
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+77.
 
-<obr/posSmc.png, id=99, 418.2024pt x 111.7776pt>
+(C:\Users\42190\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [11]
+<obr/posSmc.png, id=103, 418.2024pt x 111.7776pt>
 File: obr/posSmc.png Graphic file (type png)
 <use obr/posSmc.png>
-Package pdftex.def Info: obr/posSmc.png  used on input line 171.
+Package pdftex.def Info: obr/posSmc.png  used on input line 187.
 (pdftex.def)             Requested size: 426.79134pt x 114.07643pt.
-<obr/angSmc.png, id=100, 418.2024pt x 112.2594pt>
+<obr/angSmc.png, id=104, 418.2024pt x 112.2594pt>
 File: obr/angSmc.png Graphic file (type png)
 <use obr/angSmc.png>
-Package pdftex.def Info: obr/angSmc.png  used on input line 177.
+Package pdftex.def Info: obr/angSmc.png  used on input line 193.
 (pdftex.def)             Requested size: 426.79134pt x 114.56815pt.
-<obr/torSmc.png, id=101, 419.166pt x 221.628pt>
+<obr/torSmc.png, id=105, 419.166pt x 221.628pt>
 File: obr/torSmc.png Graphic file (type png)
 <use obr/torSmc.png>
-Package pdftex.def Info: obr/torSmc.png  used on input line 183.
+Package pdftex.def Info: obr/torSmc.png  used on input line 199.
 (pdftex.def)             Requested size: 426.79134pt x 225.6619pt.
-[11 <./obr/posSmc.png (PNG copy)>] [12 <./obr/angSmc.png (PNG copy)> <./obr/tor
-Smc.png (PNG copy)>]) [13] (main.bbl) [3
+
+[12 <./obr/posSmc.png (PNG copy)> <./obr/angSmc.png (PNG copy)>] [13 <./obr/tor
+Smc.png (PNG copy)>]) [14] (main.bbl) [3
 
 
 
@@ -815,12 +818,6 @@ Smc.png (PNG copy)>]) [13] (main.bbl) [3
 \openout2 = `lqr.m.aux'.
 
  (lqr.m.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
-.
-
-(C:\Users\42190\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
 .
 
@@ -881,13 +878,13 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (lqrReal.m.aux) (mpc.m.aux) (mpcReal.m.aux) (mpcCostFcn.m.aux) (smc.m.aux)
 (smcReal.m.aux)) ) 
 Here is how much of TeX's memory you used:
- 10445 strings out of 478584
- 163519 string characters out of 2844401
+ 10447 strings out of 478584
+ 163545 string characters out of 2844401
  1110403 words of memory out of 3000000
- 28363 multiletter control sequences out of 15000+600000
- 534771 words of font info for 70 fonts, out of 8000000 for 9000
+ 28364 multiletter control sequences out of 15000+600000
+ 535136 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,17n,76p,1018b,1722s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,17n,76p,1018b,1625s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
 /lm/lm-ec.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/
 lm-ts1.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-
@@ -910,9 +907,9 @@ Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
 Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/U
 sers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Us
 ers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb>
-Output written on main.pdf (36 pages, 4258128 bytes).
+Output written on main.pdf (37 pages, 4266466 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
+ 259 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -148,19 +148,35 @@ The state-feedback control law is not a continuous function of time, rather, it 
 
 \subsection{Simulation}
 
-The initial stage in simulating the sliding mode controller in MATLAB involved the creation of the sliding surface Eq. \ref{smcL1}. Afterwards, the calculation of the output estimate $\tau$ Eq. \ref{smcL5} needs to be done. 
+The initial stage in simulating the sliding mode controller in MATLAB involved the creation of the sliding surface Eq. \ref{smcL1}. Afterwards, the calculation of the output estimate $\hat{\tau }$ Eq. \ref{smcL5} needs to be done. 
 
 \begin{align}
 s &= (\frac{d}{dt}+e)\tilde{\alpha }+(\frac{d}{dt}+\beta )\tilde{\rho}=\dot{\tilde{\alpha }}+e\tilde{\alpha }+\dot{\tilde{\rho }}+\beta \tilde{\rho }=-\dot{\alpha }-e\alpha -\dot{\rho }-\beta \rho =0 \label{smcL1}\\
-\dot{s} &=-\dot{\omega }-e\omega -\dot{v}-\beta v=0 \label{smcL2}\\
-\dot{s} &=-\frac{}{}\varphi -\frac{}{}\alpha +\frac{}{}\tau +(\frac{}{}-e)\omega +\frac{}{}v-\frac{}{}\tau -\beta v \label{smcL3}\\
-\dot{s} &= \label{smcL4}\\
-\hat{\tau } &=\frac{j_a(m_\omega +m_e)}{m_el_{sp}-j_a}\left ( \frac{}{}+\frac{}{}-(\frac{}{}-e) -(\frac{}{}-\beta )v\right ) \label{smcL5}\\
-\hat{\tau } &= \nonumber\\
-\hat{\tau } &=12,335239v+68,877358\alpha -3,492138(0,125-e)\omega -3,492138(1,7568-\beta )v \nonumber
+\dot{s} &=-\dot{\omega }-\gamma\omega -\dot{v}-\beta v=0 \label{smcL2}\\
+\dot{s} &=-\frac{f_w m_p l_{sp}}{j_a(m_\omega + m_p)}v -\frac{m_p l_{sp} g}{j_a}\alpha +\frac{m_p l_{sp}}{j_a(m_w\omega+m_p)}\tau +\left(\frac{f_p}{j_a}-e\right)\omega +\nonumber\\ 
++ &\frac{f_\omega}{m_\omega+m_p}v-\frac{1}{m_\omega+m_p}\tau -\beta v  \nonumber\\
+&\nonumber\\
+\dot{s} &=-\frac{f_\omega m_p l_sp}{j_a (m_\omega+m_p)}v -\frac{m_p l_{sp} g}{j_a}\alpha + \left (\frac{f_p}{j_a}-e\right )\omega + \left(\frac{f_\omega}{m_\omega+m_p}-\beta\right)v + \nonumber\\
++ &\frac{m_p l_{sp}-j_a}{j_a(m_\omega+m_p)}\tau  \nonumber\\
+&\nonumber\\
+\hat{\tau } &=\frac{j_a(m_\omega +m_p)}{m_p l_{sp}-j_a} \Bigl( \frac{f_\omega m_p l_sp}{j_a (m_\omega+m_p)}v + \frac{m_p l_{sp} g}{j_a}\alpha - \left(\frac{f_p}{j_a}-e\right)\omega  \label{smcL5}\\
+-&\left(\frac{f_\omega}{m_\omega + m_p}-\beta \right)v\Bigr) \nonumber\\
+&\nonumber\\
+\hat{\tau } &= \frac{0,072(3,2+0,329)}{0,329*0,44-0,072}\Bigl(\frac{6,2*0,329*0,44}{0,072*(3,2+0.329)}v + \frac{0,329*0,44*9,81}{0,072}\alpha -\nonumber\\
+-&(0,125-e)\omega - \left(\frac{6,2}{3,2+0,329}-\beta\right)v \Bigr) \nonumber\\
+&\nonumber\\
+\hat{\tau } &=12,335239v+68,877358\alpha -3,492138(0,125-e)\omega - \label{smcL6}\\
+-& 3,492138(1,7568-\beta )v - (10*sign(s)) \nonumber
 \end{align}
 
-where $q_2$ stands for the pendulum angle, $\dot{q_2}$ is the angular velocity of the pendulum, $q_1$ is position of the base of the pendulum and $\dot{q_1}$ is the linear velocity of the base of the pendulum.
+where in Eq. \ref{smcL2} $\omega$ stands for the pendulum angle, $\dot{\omega}$ is the angular velocity of the pendulum, $v$ is position of the base of the pendulum and $\dot{v}$ is the linear velocity of the base of the pendulum. Variables $\gamma$ and $\beta$ in Eq. \ref{smcL2} are controller design parameters and they need to be tuned for the best performance. Variables $f_\omega, f_p, m_p, m_\omega, l_{sp}, j_a, g$ were obtained from the state space realization of the simulated plant model. 
+
+Finally, the sliding mode controller was implemented as written in code \ref{adwadawd}
+
+\begin{lstlisting}[numbers=left,label=adwadawd,caption={Sliding mode control implementation in MATLAB.},captionpos=b]
+s = - qd(2,k) - alpha * q(2,k)- qd(1,k)- beta * q(1,k); 
+tau(1,k) = 12.335239*qd(1,k)+68.877358*q(2,k)-3.492138*(0.125-alpha)*qd(2,k)-3.492138*(1.7568-beta)*qd(1,k)-(var_k * sign(s));
+\end{lstlisting}
 
 Following the MATLAB simulation, the obtained results reveal distinctive patterns Fig. \ref{posSmc}, \ref{angSmc}, \ref{torSmc}. Notably, each spike observed across all plots corresponds to the introduced disturbance. These disturbances were deliberately added to assess the robustness of the controller under varying conditions.
 
