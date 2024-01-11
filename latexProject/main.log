@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  11 JAN 2024 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  11 JAN 2024 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,14 +818,14 @@ Smc.png (PNG copy)>]) [14] (main.bbl) [3
 \openout2 = `lqr.m.aux'.
 
  (lqr.m.tex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 .
 
 (C:\Users\42190\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 9.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 8.
  [5
 
 
@@ -878,16 +878,16 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (lqrReal.m.aux) (mpc.m.aux) (mpcReal.m.aux) (mpcCostFcn.m.aux) (smc.m.aux)
 (smcReal.m.aux)) ) 
 Here is how much of TeX's memory you used:
- 10447 strings out of 478584
- 163545 string characters out of 2844401
+ 10445 strings out of 478584
+ 163523 string characters out of 2844401
  1110403 words of memory out of 3000000
- 28364 multiletter control sequences out of 15000+600000
+ 28362 multiletter control sequences out of 15000+600000
  535136 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,17n,76p,1018b,1625s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
-/lm/lm-ec.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/
-lm-ts1.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-
+/lm/lm-ts1.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
+/lm-ec.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-
 rm.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-math
 sy.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-math
 ex.enc}{C:/Users/42190/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-math
@@ -907,7 +907,7 @@ Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
 Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/U
 sers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Us
 ers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb>
-Output written on main.pdf (37 pages, 4266466 bytes).
+Output written on main.pdf (37 pages, 4266337 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
