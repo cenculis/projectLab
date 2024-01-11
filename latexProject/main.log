@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  11 JAN 2024 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  11 JAN 2024 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -600,53 +600,53 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \c@lstlisting=\count317
 
 
-pdfTeX warning: pdflatex.exe (file ./Titulka.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-<Titulka.pdf, id=1, 597.55246pt x 845.07718pt>
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf>
-Package pdftex.def Info: Titulka.pdf  used on input line 79.
+pdfTeX warning: pdflatex.exe (file ./titlePage.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<titlePage.pdf, id=1, 597.55246pt x 845.07718pt>
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf>
+Package pdftex.def Info: titlePage.pdf  used on input line 79.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./Titulka.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf>
-Package pdftex.def Info: Titulka.pdf  used on input line 79.
+pdfTeX warning: pdflatex.exe (file ./titlePage.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf>
+Package pdftex.def Info: titlePage.pdf  used on input line 79.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./Titulka.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./titlePage.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
 
 
-pdfTeX warning: pdflatex.exe (file ./Titulka.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-<Titulka.pdf, id=4, page=1, 597.55246pt x 845.07718pt>
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf, page 1>
-Package pdftex.def Info: Titulka.pdf , page1 used on input line 79.
+pdfTeX warning: pdflatex.exe (file ./titlePage.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<titlePage.pdf, id=4, page=1, 597.55246pt x 845.07718pt>
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf, page 1>
+Package pdftex.def Info: titlePage.pdf , page1 used on input line 79.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf, page 1>
-Package pdftex.def Info: Titulka.pdf , page1 used on input line 79.
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf, page 1>
+Package pdftex.def Info: titlePage.pdf , page1 used on input line 79.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf, page 1>
-Package pdftex.def Info: Titulka.pdf , page1 used on input line 79.
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf, page 1>
+Package pdftex.def Info: titlePage.pdf , page1 used on input line 79.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf, page 1>
-Package pdftex.def Info: Titulka.pdf , page1 used on input line 79.
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf, page 1>
+Package pdftex.def Info: titlePage.pdf , page1 used on input line 79.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-File: Titulka.pdf Graphic file (type pdf)
-<use Titulka.pdf, page 1>
-Package pdftex.def Info: Titulka.pdf , page1 used on input line 79.
+File: titlePage.pdf Graphic file (type pdf)
+<use titlePage.pdf, page 1>
+Package pdftex.def Info: titlePage.pdf , page1 used on input line 79.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 [1
 
- <./Titulka.pdf>] (main.toc
+ <./titlePage.pdf>] (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
 .
 
@@ -879,7 +879,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (smcReal.m.aux)) ) 
 Here is how much of TeX's memory you used:
  10445 strings out of 478584
- 163523 string characters out of 2844401
+ 163549 string characters out of 2844401
  1110403 words of memory out of 3000000
  28362 multiletter control sequences out of 15000+600000
  535136 words of font info for 71 fonts, out of 8000000 for 9000
@@ -907,7 +907,7 @@ Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
 Users/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/U
 sers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Us
 ers/42190/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb>
-Output written on main.pdf (37 pages, 4266337 bytes).
+Output written on main.pdf (37 pages, 4267316 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

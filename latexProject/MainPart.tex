@@ -41,10 +41,10 @@ K^*(t)=R(t)^{-1}B(t)^TP(t)
 \subsection{Simulation}
 In the context of simulation using MATLAB for control system design, the provided code, obtained from the lab coordinator, incorporates the design of a Linear Quadratic Regulator (LQR) controller used for the control of nonlinear inverted pendulum. The primary objective is to evaluate the functionality of the code under different conditions. To assess the system's robustness and performance, disturbances have been introduced. Additionally, the LQR controller's parameters have been fine-tuned for optimal performance.
 
-The simulation relies on MATLAB's dlqr command Eq. \ref{eq3andHalf}, where "dlqr" stands for "Linear-quadratic (LQ) state-feedback regulator" specifically designed for discrete-time state-space systems. This MATLAB command is instrumental in computing the state-feedback gain matrix for an LQR controller, considering both state and input weighting matrices. The resulting gain matrix is then utilized in the feedback control law to regulate the system and optimize its performance. 
-\begin{equation}\label{eq3andHalf}
+The simulation relies on MATLAB's dlqr command code \ref{eq3andHalf}, where "dlqr" stands for "Linear-quadratic (LQ) state-feedback regulator" specifically designed for discrete-time state-space systems. This MATLAB command is instrumental in computing the state-feedback gain matrix for an LQR controller, considering both state and input weighting matrices. The resulting gain matrix is then utilized in the feedback control law to regulate the system and optimize its performance. 
+\begin{lstlisting}[numbers=left,label=eq3andHalf,caption={Discrete linear quadratic regulator implementation in MATLAB.},captionpos=b]
 [K,P]=dlqr(A,B,Q,R)
-\end{equation}
+\end{lstlisting}
 Where $K$ is the feedback matrix and $P$ infinite horizon solution of the associated discrete-time Riccati equation, where $P$ is in the form of Eq. \ref{eq4}
 
 \begin{equation}\label{eq4}
